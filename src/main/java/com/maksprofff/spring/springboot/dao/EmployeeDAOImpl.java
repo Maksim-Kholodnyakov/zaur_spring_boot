@@ -16,12 +16,6 @@ public class EmployeeDAOImpl implements EmployeeDAO{
     @PersistenceContext
     private EntityManager entityManager;
 
-//    @Override
-//    public void saveEmployee(Employee employee) {
-//        Session session = entityManager.unwrap(Session.class);
-//        session.saveOrUpdate(employee);
-//    }
-
     @Override
     public List<Employee> getAllEmployees() {
         Session session = entityManager.unwrap(Session.class);
@@ -29,6 +23,12 @@ public class EmployeeDAOImpl implements EmployeeDAO{
         List<Employee> allEmployees = query.getResultList();
         return allEmployees;
     }
+
+    //    @Override
+//    public void saveEmployee(Employee employee) {
+//        Session session = entityManager.unwrap(Session.class);
+//        session.saveOrUpdate(employee);
+//    }
 //
 //    @Override
 //    public Employee getEmployee(int id) {
